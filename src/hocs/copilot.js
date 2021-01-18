@@ -90,7 +90,12 @@ const copilot = ({
     getNextStep = (step: ?Step = this.state.currentStep): ?Step =>
       getNextStep(this.state.steps, step);
 
-    getTotalStepCount = (): ?object => this.state.steps;
+    getTotalStepCount = (): ?number => {
+      if (!this?.state?.steps) {
+        return 0;
+      }
+      return Object.keys(this.state.steps).length;
+    };
 
     setCurrentStep = async (step: Step, move?: boolean = true): void => {
       await this.setState({ currentStep: step });
@@ -218,6 +223,7 @@ const copilot = ({
             visible={this.state.visible}
             isFirstStep={this.isFirstStep()}
             isLastStep={this.isLastStep()}
+            totalStepCount={this.getTotalStepCount()}
             currentStepNumber={this.getStepNumber()}
             currentStep={this.state.currentStep}
             labels={labels}

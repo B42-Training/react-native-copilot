@@ -319,9 +319,10 @@ class CopilotModal extends Component<Props, State> {
           currentStep={this.props.currentStep}
           handleNext={this.handleNext}
           handlePrev={this.handlePrev}
+          currentStepNumber={this.props.currentStepNumber}
           handleStop={this.handleStop}
           labels={this.props.labels}
-          currentStepNumber={this.props.currentStepNumber}
+          totalStepCount={this.props.totalStepCount}
         />
       </Animated.View>,
     ];
