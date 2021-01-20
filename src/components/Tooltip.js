@@ -15,7 +15,12 @@ type Props = {
   handlePrev: func,
   handleStop: func,
   currentStep: Step,
-  labels: Object,
+  labels: {
+    finish?: string
+    next?: string
+    previous?: string
+    skip?: string
+  }
 };
 
 const Tooltip = ({

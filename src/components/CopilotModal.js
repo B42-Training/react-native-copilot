@@ -37,7 +37,12 @@ type Props = {
   animated: boolean,
   androidStatusBarVisible: boolean,
   backdropColor: string,
-  labels: Object,
+  labels: {
+    finish?: string
+    next?: string
+    previous?: string
+    skip?: string
+  },
   svgMaskPath?: SvgMaskPathFn,
   stopOnOutsideClick?: boolean,
   arrowColor?: string,
