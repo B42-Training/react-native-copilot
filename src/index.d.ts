@@ -46,6 +46,7 @@ declare module 'react-native-copilot' {
     stopOnOutsideClick?: boolean; // Whether the tutorial should stop after clicking outside the step component
     labels: Labels;
     tooltipStyle: Object;
+    arrowColor: string;
   };
 
   /**
