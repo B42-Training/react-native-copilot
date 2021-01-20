@@ -23,6 +23,13 @@ declare module 'react-native-copilot' {
     currentStepNumber: number;
   };
 
+  export type Labels = {
+    finish?: string;
+    next?: string;
+    previous?: string;
+    skip?: string;
+  }
+
   export type OverlayType = 'svg' | 'view';
   /**
    * Options for the copilot HOC
@@ -36,6 +43,7 @@ declare module 'react-native-copilot' {
     backdropColor?: string; // You can customize the mask color - default is rgba(0, 0, 0, 0.4)
     verticalOffset?: number; // In order to adjust vertical position
     stopOnOutsideClick?: boolean; // Whether the tutorial should stop after clicking outside the step component
+    labels: Labels
   };
 
   /**
@@ -79,8 +87,8 @@ declare module 'react-native-copilot' {
   export function copilot<P extends object>(
     props: CopilotOptions
   ): (
-    wrappedComponent: ComponentType<P>
-  ) => ComponentType<P & CopilotWrappedComponentProps>;
+      wrappedComponent: ComponentType<P>
+    ) => ComponentType<P & CopilotWrappedComponentProps>;
 
   /**
    * Higher order component to make walthroughable any built-in react native component
@@ -93,5 +101,5 @@ declare module 'react-native-copilot' {
   /**
    * Element that wraps a walkthroughable component (built-in or custom)
    */
-  export class CopilotStep extends Component<CopilotStepProps> {}
+  export class CopilotStep extends Component<CopilotStepProps> { }
 }
