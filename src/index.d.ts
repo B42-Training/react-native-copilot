@@ -46,6 +46,7 @@ declare module 'react-native-copilot' {
     stopOnOutsideClick?: boolean; // Whether the tutorial should stop after clicking outside the step component
     labels: Labels;
     tooltipStyle: Object;
+    arrowColor: string;
   };
 
   /**
@@ -89,8 +90,8 @@ declare module 'react-native-copilot' {
   export function copilot<P extends object>(
     props: CopilotOptions
   ): (
-      wrappedComponent: ComponentType<P>
-    ) => ComponentType<P & CopilotWrappedComponentProps>;
+      wrappedComponent: ComponentType<any>
+    ) => ComponentType<any>;
 
   /**
    * Higher order component to make walthroughable any built-in react native component
