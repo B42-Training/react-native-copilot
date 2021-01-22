@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import { findNodeHandle, View } from "react-native";
+import { findNodeHandle, ScrollView, View } from "react-native";
 
 import mitt from "mitt";
 import hoistStatics from "hoist-non-react-statics";
@@ -167,7 +167,7 @@ const copilot = ({
     start = async (fromStep?: string, scrollView?: React.RefObject): void => {
       const { steps } = this.state;
 
-      if (!this.state.scrollView) {
+      if (!this.state.scrollView && scrollView) {
         this.setState({ scrollView });
       }
 
